@@ -1,0 +1,16 @@
+{
+  "name": "Whatsapp",
+  "version": "1.0.0",
+  "description": "W",
+  "main": "index.js",
+  "scripts": {
+    "serve": "node index.js"
+  },
+  "author": "Akash Lodha",
+  "license": "ISC",
+  "dependencies": {
+    "node-xlsx": "^0.17.2",
+    "puppeteer": "^1.13.0",
+    "xlsx": "^0.17.2"
+  }
+}
