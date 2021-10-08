@@ -26,11 +26,17 @@ const start = async () => {
           let content = encodeURI(precontent)
 
           let phnNo = contact[0]+""
-          if(phnNo.length==10) {
+          if(phnNo.length<=9) {
+            continue
+          } else if(phnNo.length==10) {
             phnNo = "91"+phnNo
-          } else if(phnNo.length==11 && phnNo.charAt(0)=='0') {
-            phnNo = phnNo.replace('0','91')
-          }
+          } else if(phnNo.length==11) {
+            if(phnNo.charAt(0)=='0') {
+              phnNo = phnNo.replace('0','91')
+            } else {
+              continue
+            } 
+          } 
           await page.goto('https://web.whatsapp.com/send?phone='+phnNo+'&text='+content)
 
           await page.on('dialog', async dialog => {
