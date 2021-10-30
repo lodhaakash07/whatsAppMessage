@@ -49,7 +49,7 @@ const start = async () => {
             console.log('invalid phone number ' +phnNo)
             continue;
           }
-          await page.waitFor(1000)
+          await page.waitFor(10000)
           await page.focus('._4sWnG')
           await page.keyboard.press(String.fromCharCode(13))
           console.log('success send message to '+phnNo)
